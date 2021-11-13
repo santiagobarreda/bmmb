@@ -3,7 +3,7 @@
 #'
 #' Shorter brms model print statement.
 #'
-#' @param hypothesis brms model object.
+#' @param model brms model object.
 #' @export
 #' @examples
 #' \dontrun{
@@ -11,7 +11,7 @@
 #' }
 
 short_summary = function (model){
-  text = capture.output (model)
+  text = utils::capture.output (model)
   formula = grep ("Formula", text)
   start = grep ("Group-Level Effects", text)
   end = grep ("Samples were drawn", text)-2
