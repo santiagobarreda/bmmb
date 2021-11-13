@@ -7,7 +7,7 @@
 short_summary(model)
 }
 \arguments{
-\item{hypothesis}{brms model object.}
+\item{model}{brms model object.}
 }
 \description{
 Shorter brms model print statement.

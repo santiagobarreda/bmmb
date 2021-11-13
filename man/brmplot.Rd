@@ -39,6 +39,8 @@ brmplot(
 
 \item{horizontal}{--.}
 
+\item{add}{--.}
+
 \item{xs}{--.}
 
 \item{col}{--.}
@@ -73,7 +75,7 @@ brmplot(
 
 \item{nudge}{--.}
 
-\item{name}{--.}
+\item{...}{--.}
 }
 \value{
 --.
