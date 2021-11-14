@@ -31,11 +31,11 @@ brmplot(
 )
 }
 \arguments{
-\item{mat}{--.}
+\item{mat}{a dataframe or matrix representing the posterior summary of brms model parameters.}
 
-\item{ylim}{--.}
+\item{ylim}{optionally override the plot y range.}
 
-\item{xlim}{--.}
+\item{xlim}{optionally override the plot x range.}
 
 \item{horizontal}{--.}
 

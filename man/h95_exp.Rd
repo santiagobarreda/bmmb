@@ -5,7 +5,7 @@
 \alias{h95_exp}
 \title{H95 experiment}
 \format{
-An object of class \code{data.frame} with 2780 rows and 27 columns.
+An object of class \code{data.frame} with 2780 rows and 10 columns.
 }
 \source{
 \url{https://github.com/santiagobarreda/FastTrackR}
