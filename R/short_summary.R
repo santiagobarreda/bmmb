@@ -14,7 +14,7 @@ short_summary = function (model){
   text = utils::capture.output (model)
   formula = grep ("Formula", text)
   start = grep ("Group-Level Effects", text)
-  end = grep ("Samples were drawn", text)-2
+  end = grep ("Draws were sampled", text)-2
 
   output = text[start:end]
   output = paste0(output,"\n")
