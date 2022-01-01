@@ -4,10 +4,16 @@
 \alias{short_summary}
 \title{Short summary printout}
 \usage{
-short_summary(model)
+short_summary(model, omit_conv_stats = TRUE, omit_corrs = TRUE, digits = 2)
 }
 \arguments{
-\item{model}{brms model object.}
+\item{model}{--.}
+
+\item{omit_conv_stats}{--.}
+
+\item{omit_corrs}{--.}
+
+\item{digits}{--.}
 }
 \description{
 Shorter brms model print statement.

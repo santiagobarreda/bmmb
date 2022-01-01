@@ -8,12 +8,12 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' get_model ("2_model.RDS")
+#' get_model ("3_model.RDS")
 #' }
 #'
 
 get_model = function (model_name){
-  base_url = "https://raw.githubusercontent.com/santiagobarreda/stats-class/master/models/"
+  base_url = "https://raw.githubusercontent.com/santiagobarreda/bmmb/master/models/"
   url = paste0 (base_url, model_name)
   model_RDS = readRDS (url(url))
   model_RDS

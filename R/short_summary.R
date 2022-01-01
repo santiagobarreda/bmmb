@@ -3,23 +3,44 @@
 #'
 #' Shorter brms model print statement.
 #'
-#' @param model brms model object.
+#' @param model --.
+#' @param omit_conv_stats --.
+#' @param omit_corrs --.
+#' @param digits --.
 #' @export
 #' @examples
 #' \dontrun{
 #'  # coming soon
 #' }
 
-short_summary = function (model){
-  text = utils::capture.output (model)
-  formula = grep ("Formula", text)
-  start = grep ("Group-Level Effects", text)
-  end = grep ("Draws were sampled", text)-2
+short_summary = function (model, omit_conv_stats = TRUE, omit_corrs = TRUE, digits = 2){
 
-  output = text[start:end]
-  output = paste0(output,"\n")
+  if (class(model) == "brmsfit")
+    model = summary(model)
+  if (class(model) != "brmssummary")
+    stop("Wrong object type passed.")
 
-  #text = c("\n",text[formula],"\n\n",output,"\n")
-  text = c(text[formula],"\n\n",output)
-  cat (text)
+  cat ("Formula: ", as.character(model$formula)[1])
+  if (length(model$ngrps) > 0) {
+    cat("\n\nGroup-Level Effects:")
+    for (i in 1:length(model$ngrps)) {
+      cat("\n~", names(model$ngrps)[i], " (Number of levels: ",
+          model$ngrps[[i]], ")", "\n", sep = "")
+      if (omit_conv_stats)
+        tmp = round(model$random[[i]][, 1:4], digits)
+      if (!omit_conv_stats)
+        tmp = round(model$random[[i]], digits)
+      use = 1:nrow(tmp)
+      if (omit_corrs)
+        use = !(substr(rownames(tmp), 1, 3) == "cor")
+      print(tmp[use, ])
+    }
+  }
+  cat("\nPopulation-Level Effects:\n")
+  if (omit_conv_stats) print(round(model$fixed[, 1:4], digits))
+  if (!omit_conv_stats) print(round(model$fixed, digits))
+  cat("\nFamily Specific Parameters:\n")
+  if (omit_conv_stats) print(round(model$spec_pars[, 1:4], digits))
+  if (!omit_conv_stats) print(round(model$spec_pars, digits))
 }
+

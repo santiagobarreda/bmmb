@@ -17,7 +17,7 @@ Models are downloaded from the book GitHub page.
 }
 \examples{
 \dontrun{
-get_model ("2_model.RDS")
+get_model ("3_model.RDS")
 }
 
 }

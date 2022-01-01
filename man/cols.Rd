@@ -5,7 +5,7 @@
 \alias{cols}
 \title{Colors for plotting}
 \format{
-An object of class \code{character} of length 10.
+An object of class \code{character} of length 15.
 }
 \usage{
 cols

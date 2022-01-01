@@ -17,4 +17,5 @@ Depends:
 RoxygenNote: 7.1.1
 Imports:
     brms,
-    phonTools
+    phonTools,
+	bookdown

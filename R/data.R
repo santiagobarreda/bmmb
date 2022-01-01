@@ -137,9 +137,42 @@
 "darkorange"
 
 
+#' Colors for book plots
+#'
+#' Colors used in book figures.
+
+"olive"
 
 
+#' Colors for book plots
+#'
+#' Colors used in book figures.
 
+"lightbrown"
+
+
+#' Colors for book plots
+#'
+#' Colors used in book figures.
+
+"red"
+
+
+#' Colors for book plots
+#'
+#' Colors used in book figures.
+
+"beige"
+
+
+#' Colors for book plots
+#'
+#' Colors used in book figures.
+
+"grey"
+
+
+# cols = c(lightpink,coral,yellow,deepgreen,teal,maroon,skyblue,deeppurple,darkorange,olive,lightbrown,red,beige,lavender,grey)
 
 
 

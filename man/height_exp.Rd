@@ -5,7 +5,7 @@
 \alias{height_exp}
 \title{H95 experiment}
 \format{
-An object of class \code{data.frame} with 3336 rows and 9 columns.
+An object of class \code{data.frame} with 4170 rows and 11 columns.
 }
 \source{
 \url{https://github.com/santiagobarreda/FastTrackR}
