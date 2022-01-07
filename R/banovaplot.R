@@ -46,3 +46,4 @@ banovaplot = function (baov, ylim=NULL, xlim = NULL, horizontal = TRUE,
            yaxs=yaxs,xaxs=xaxs, line=line,...)
 }
 
+
