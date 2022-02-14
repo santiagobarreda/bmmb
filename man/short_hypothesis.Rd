@@ -4,10 +4,12 @@
 \alias{short_hypothesis}
 \title{Short hypothesis printout}
 \usage{
-short_hypothesis(hypothesis)
+short_hypothesis(model, ...)
 }
 \arguments{
-\item{hypothesis}{brms hypothesis object.}
+\item{model}{brms hypothesis object.}
+
+\item{...}{bla bla.}
 }
 \description{
 Shorter brms hypothesis print statement.
