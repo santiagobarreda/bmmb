@@ -4,7 +4,7 @@
 \alias{short_summary}
 \title{Short summary printout}
 \usage{
-short_summary(model, omit_conv_stats = TRUE, omit_corrs = TRUE, digits = 2)
+short_summary(model, omit_conv_stats = TRUE, omit_corrs = FALSE, digits = 2)
 }
 \arguments{
 \item{model}{--.}
