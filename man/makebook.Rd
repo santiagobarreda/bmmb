@@ -4,7 +4,10 @@
 \alias{makebook}
 \title{Make word book}
 \usage{
-makebook()
+makebook(folder = "./")
+}
+\arguments{
+\item{folder}{--.}
 }
 \description{
 --
