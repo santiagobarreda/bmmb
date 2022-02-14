@@ -3,6 +3,7 @@
 export(add_missing)
 export(banova)
 export(banovaplot)
+export(boldwords)
 export(brmplot)
 export(divide_factors)
 export(dtns)
