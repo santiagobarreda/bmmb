@@ -13,7 +13,7 @@
 #'  # coming soon
 #' }
 
-short_summary = function (model, omit_conv_stats = TRUE, omit_corrs = TRUE, digits = 2){
+short_summary = function (model, omit_conv_stats = TRUE, omit_corrs = FALSE, digits = 2){
 
   if (class(model) == "brmsfit")
     model = summary(model)
