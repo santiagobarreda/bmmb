@@ -13,7 +13,7 @@
 #'
 
 get_model = function (model_name){
-  base_url = "https://raw.githubusercontent.com/santiagobarreda/bmmb/master/models/"
+  base_url = "https://raw.githubusercontent.com/santiagobarreda/bmmrp/master/models/"
   url = paste0 (base_url, model_name)
   model_RDS = readRDS (url(url))
   model_RDS
