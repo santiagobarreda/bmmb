@@ -37,16 +37,17 @@
 brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
                     xs = NULL, col = 1, labels = "default",xlab='',ylab='',
                     pch=16, lwd=2,cex=1.5, las=NA,cex.axis=1,grid=TRUE,cex.lab=1,
-                    robust = FALSE, yaxs="r",xaxs="r",line=TRUE, nudge =0,...){
+                    robust = FALSE, yaxs="r",xaxs="r",line=TRUE, nudge =0,omit=0,...){
 
-  #n = nrow (mat)
-  #if (n > 500 & colnames(mat)[1] !="Estimate") mat = brms::posterior_summary (mat, robust=robust)
+  if (class(mat)[1] == "brmsfit") mat = fixef(mat)
+
+  if (omit[1] != 0) mat = mat[-omit,]
   n = nrow (mat)
 
   if (horizontal){
     if (is.null(xs)) xs = (1:n)
     xs = xs + nudge
-    if (is.null(xlim)) xlim = range (1:n)
+    if (is.null(xlim)) xlim = range (1:n) + c(-.2,.2)
     if (is.null(ylim)) ylim = range (mat[,3:4])
     if (labels[1]=="default") labels = rownames(mat)
     if (is.null(labels)) labels = 1:nrow(mat)
@@ -73,7 +74,7 @@ brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
     if (labels[1]=="default") labels = rownames(mat)
     if (is.null(labels)) labels = 1:nrow(mat)
 
-    if (is.null(ylim)) ylim = range (1:n)
+    if (is.null(ylim)) ylim = range (1:n) + c(-.2,.2)
     if (!add){
       plot (0,type='n', ylim = ylim,xlim=xlim, ylab=ylab,yaxt='n',xlab = xlab,
             cex.axis=cex.axis,yaxs=yaxs,xaxs=xaxs,cex.lab=cex.lab,...)
