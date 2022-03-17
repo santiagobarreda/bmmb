@@ -44,6 +44,7 @@ interactionplot <- function (x.factor, trace.factor, response, fun = mean,
                               xpd = NULL, leg.bg = graphics::par("bg"), leg.bty = "n",
                               xtick = FALSE, xaxt = graphics::par("xaxt"), axes = TRUE,
                               leg.x=NULL, leg.y=NULL, xlim = NULL, ...) {
+
   ylabel <- paste(deparse(substitute(fun)), "of ", deparse(substitute(response)))
   type <- match.arg(type)
   cells <- tapply(response, list(x.factor, trace.factor), fun)
@@ -66,7 +67,7 @@ interactionplot <- function (x.factor, trace.factor, response, fun = mean,
   if (is.null(ylabs))
     ylabs <- as.character(1L:nc)
   if (is.null(xlim))
-    xlim <- range(xvals)
+    xlim <- range(xvals)+c(-.2,.2)
   if (is.null(leg.x)) {
     leg.x <- xlim[2L] + 0.05 * diff(xlim)
     xlim <- xlim + c(-0.2/nr, if (legend) 0.2 + 0.02 * nch else 0.2/nr) *
