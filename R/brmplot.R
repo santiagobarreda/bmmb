@@ -25,6 +25,7 @@
 #' @param xaxs --.
 #' @param line --.
 #' @param nudge --.
+#' @param omit --.
 #' @param ... --.
 #' @return --.
 #' @export
@@ -39,7 +40,7 @@ brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
                     pch=16, lwd=2,cex=1.5, las=NA,cex.axis=1,grid=TRUE,cex.lab=1,
                     robust = FALSE, yaxs="r",xaxs="r",line=TRUE, nudge =0,omit=0,...){
 
-  if (class(mat)[1] == "brmsfit") mat = fixef(mat)
+  if (class(mat)[1] == "brmsfit") mat = brms::fixef(mat)
 
   if (omit[1] != 0) mat = mat[-omit,]
   n = nrow (mat)
