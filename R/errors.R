@@ -7,7 +7,7 @@ rms = function (x){
 
 
 mae = function (x){
-  return (median (abs(x)))
+  return (stats::median (abs(x)))
 }
 
 
