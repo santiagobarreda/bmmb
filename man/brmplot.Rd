@@ -27,6 +27,7 @@ brmplot(
   xaxs = "r",
   line = TRUE,
   nudge = 0,
+  omit = 0,
   ...
 )
 }
@@ -74,6 +75,8 @@ brmplot(
 \item{line}{--.}
 
 \item{nudge}{--.}
+
+\item{omit}{--.}
 
 \item{...}{--.}
 }
