@@ -8,8 +8,6 @@ short_hypothesis(model, ...)
 }
 \arguments{
 \item{model}{brms hypothesis object.}
-
-\item{...}{bla bla.}
 }
 \description{
 Shorter brms hypothesis print statement.
