@@ -41,6 +41,7 @@ brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
                     robust = FALSE, yaxs="r",xaxs="r",line=TRUE, nudge =0,omit=0,...){
 
   if (class(mat)[1] == "brmsfit") mat = brms::fixef(mat)
+  #if (class(mat)[1] == "short_hypothesis") mat = mat[[1]]
 
   if (omit[1] != 0) mat = mat[-omit,]
   n = nrow (mat)
