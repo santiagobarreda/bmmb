@@ -27,7 +27,7 @@ r2_bayes = function (model, re_formula = NULL, summary = TRUE){
   linpred_vars = apply (linpred,1,stats::var)
   resids_vars = apply (resids,1,stats::var)
   r2 = (linpred_vars / (linpred_vars+resids_vars))
-  if (summary) brms::posterior_summary (r2)
+  if (summary) r2 = brms::posterior_summary (r2)
 
   return (r2)
 }
