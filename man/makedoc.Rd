@@ -4,10 +4,12 @@
 \alias{makedoc}
 \title{Make word document}
 \usage{
-makedoc(file)
+makedoc(file, output_format = "bookdown::word_document2")
 }
 \arguments{
 \item{file}{--.}
+
+\item{output_format}{--.}
 }
 \description{
 --
