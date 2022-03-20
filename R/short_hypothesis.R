@@ -4,6 +4,7 @@
 #' Shorter brms hypothesis print statement.
 #'
 #' @param model brms hypothesis object.
+#' @param ... --.
 #' @export
 #' @examples
 #' \dontrun{
