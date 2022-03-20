@@ -4,6 +4,7 @@
 #' --
 
 #' @param folder --.
+#' @param output_format --.
 #' @export
 #' @examples
 #' \dontrun{
@@ -12,19 +13,20 @@
 #'
 #'
 
-makebook = function (folder = "./"){
+makebook = function (folder = "./", output_format = "bookdown::word_document2"){
 
-  rmds = list.files (folder, pattern = ".Rmd")
+  bmmb::copyrmd ()
+  rmds_short = list.files ("../rmd_files", pattern = "*.Rmd")
+  rmds = list.files ("../rmd_files", pattern = "*.Rmd", full.names = TRUE)
   n = length(rmds)
 
   for (i in 1:n){
     tmp = readLines (rmds[i])
     spots = which (tmp=="$$")
     if (length(spots)>0) tmp = tmp[-spots]
-    if (i==n) writeLines (tmp, '../book/index.Rmd')
-    if (i!=n) writeLines (tmp, paste0('../book/0',i,'.Rmd'))
+    writeLines (tmp, paste0('../make/',rmds_short[i]))
   }
-
-  bookdown::render_book ('../book', "bookdown::word_document2", output_dir = ".")
+  xfun::in_dir ('../make', bookdown::render_book ("./", output_format = output_format))
 
 }
+
