@@ -4,6 +4,7 @@
 #' --
 #'
 #' @param file --.
+#' @param output_format --.
 #' @export
 #' @examples
 #' \dontrun{
@@ -13,14 +14,13 @@
 #'
 
 
-makedoc = function (file){
+makedoc = function (file, output_format = "bookdown::word_document2"){
+
   tmp = readLines (file)
   spots = which (tmp=="$$")
-  tmp = tmp[-spots]
+  if (length (spots) > 0) tmp = tmp[-spots]
 
-  writeLines (tmp, 'tmp.Rmd')
-  bookdown::preview_chapter ('tmp.Rmd', "bookdown::word_document2",
-                             output_dir = ".")
-  file.remove ('tmp.Rmd')
+  writeLines (tmp, paste0 ('../make/', file))
+  #bmmb::copyrmd ()
+  xfun::in_dir ('../make', bookdown::preview_chapter (paste0 ('../make/', file), output_format = output_format))
 }
-
