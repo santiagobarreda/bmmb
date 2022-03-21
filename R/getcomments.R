@@ -14,10 +14,11 @@
 #'
 #'
 
+
 getcomments = function (file, context = TRUE){
   text = readLines (file)
-  comments = grep("@@", text)
-  comments = text[comments]
+  spots = grep("@@", text)
+  comments = text[spots]
 
   if (!context){
     for (i in 1:length (comments)){
@@ -32,6 +33,5 @@ getcomments = function (file, context = TRUE){
       comments[i] = paste0 (tmp[open:close], collapse="")
     }
   }
-  comments
+  paste(spots, comments, sep = "-")
 }
-
