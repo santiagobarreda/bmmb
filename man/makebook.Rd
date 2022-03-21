@@ -4,10 +4,12 @@
 \alias{makebook}
 \title{Make word book}
 \usage{
-makebook(folder = "./")
+makebook(folder = "./", output_format = "bookdown::word_document2")
 }
 \arguments{
 \item{folder}{--.}
+
+\item{output_format}{--.}
 }
 \description{
 --
