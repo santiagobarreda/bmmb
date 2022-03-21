@@ -35,3 +35,4 @@ getcomments = function (file, context = TRUE){
   }
   paste(spots, comments, sep = "-")
 }
+
