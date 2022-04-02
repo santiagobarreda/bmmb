@@ -3,7 +3,7 @@
 #'
 #' Shorter brms hypothesis print statement.
 #'
-#' @param model brms hypothesis object.
+#' @param x brms hypothesis object.
 #' @param ... --.
 #' @export
 #' @examples
@@ -11,9 +11,9 @@
 #'  # coming soon
 #' }
 
-short_hypothesis = function (model, ...){
+short_hypothesis = function (x, ...){
   call = as.list( sys.call() )
-  tmp = do.call (brms::hypothesis, call[-1])
+  tmp =brms::hypothesis (x, ...)
   output = brms::posterior_summary  (tmp$samples)
   output = data.frame (output)
   attr(output,"hypothesis") = tmp[[1]][[1]]
