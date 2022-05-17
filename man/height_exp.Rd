@@ -3,9 +3,9 @@
 \docType{data}
 \name{height_exp}
 \alias{height_exp}
-\title{H95 experiment}
+\title{Our experiment}
 \format{
-An object of class \code{data.frame} with 4170 rows and 11 columns.
+An object of class \code{data.frame} with 4170 rows and 13 columns.
 }
 \source{
 \url{https://github.com/santiagobarreda/FastTrackR}
