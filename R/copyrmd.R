@@ -3,7 +3,6 @@
 #'
 #' --
 #'
-#' @param --.
 #' @export
 #' @examples
 #' \dontrun{
