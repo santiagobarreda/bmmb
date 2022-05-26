@@ -5,11 +5,12 @@
 #' --
 #'
 #' @param predictions --.
-#' @param nsamples --.
+#' @param n_samples --.
 #' @param samples --.
 #' @param xlim --.
 #' @param ylim --.
 #' @param ignore_extreme --.
+#' @param ... --.
 #' @export
 #' @examples
 #' \dontrun{
@@ -35,8 +36,8 @@ p_check = function (predictions, n_samples = 10, samples = NULL,
 
   if (ignore_extreme){
     tmp = predictions[spots,]
-    tmp_median = median(tmp)
-    mad = median(abs(tmp - tmp_median))
+    tmp_median = stats::median(tmp)
+    mad = stats::median(abs(tmp - tmp_median))
     from = tmp_median - 5*mad
     to = tmp_median + 5*mad
   }
@@ -44,7 +45,7 @@ p_check = function (predictions, n_samples = 10, samples = NULL,
   for (i in 1:n_samples){
     tmp = predictions[spots[i],]
     if (ignore_extreme) tmp = tmp[tmp > from & tmp < to]
-    dens[[i]] = density(tmp)
+    dens[[i]] = stats::density(tmp)
     if (max(dens[[i]]$y) > maxy) maxy = max(dens[[i]]$y)
     if (max(dens[[i]]$x) > maxx) maxx = max(dens[[i]]$x)
     if (min(dens[[i]]$x) < minx) minx = min(dens[[i]]$x)
@@ -54,7 +55,7 @@ p_check = function (predictions, n_samples = 10, samples = NULL,
 
   plot (dens[[1]], xlim = xlim, ylim = ylim, main="", ...)
   for (i in 1:n_samples){
-    lines (dens[[i]], col = cols[[i]], lwd=4, lty=1, ...)
+    graphics::lines (dens[[i]], col = bmmb::cols[[i]], lwd=4, lty=1, ...)
   }
 }
 
@@ -72,7 +73,7 @@ p_check = function (predictions, n_samples = 10, samples = NULL,
 #'
 
 get_samples = function (model){
-  output = data.frame (brms::as_draws_matrix(priors_sigma_default))
+  output = data.frame (brms::as_draws_matrix(model))
   return (output)
 }
 
