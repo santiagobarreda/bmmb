@@ -17,6 +17,8 @@ p_check(
 \arguments{
 \item{predictions}{--.}
 
+\item{n_samples}{--.}
+
 \item{samples}{--.}
 
 \item{xlim}{--.}
@@ -25,7 +27,7 @@ p_check(
 
 \item{ignore_extreme}{--.}
 
-\item{nsamples}{--.}
+\item{...}{--.}
 }
 \description{
 --
