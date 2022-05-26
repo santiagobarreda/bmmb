@@ -38,7 +38,7 @@
 brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
                     xs = NULL, col = 1, labels = "default",xlab='',ylab='',
                     pch=16, lwd=2,cex=1.5, las=NA,cex.axis=1,grid=TRUE,cex.lab=1,
-                    robust = FALSE, yaxs="r",xaxs="r",line=TRUE, nudge =0,omit=0,...){
+                    robust = FALSE, yaxs="r",xaxs="r",line=FALSE, nudge =0,omit=0,...){
 
   if (class(mat)[1] == "brmsfit") mat = brms::fixef(mat)
   #if (class(mat)[1] == "short_hypothesis") mat = mat[[1]]
