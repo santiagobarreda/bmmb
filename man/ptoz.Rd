@@ -2,7 +2,7 @@
 % Please edit documentation in R/logits.R
 \name{ptoz}
 \alias{ptoz}
-\title{Convert logit to probability}
+\title{Convert probability to logit}
 \usage{
 ptoz(p)
 }

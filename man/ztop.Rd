@@ -2,7 +2,7 @@
 % Please edit documentation in R/logits.R
 \name{ztop}
 \alias{ztop}
-\title{Convert probability to logit}
+\title{Convert logit to probability}
 \usage{
 ztop(z)
 }
