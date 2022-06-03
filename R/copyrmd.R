@@ -11,6 +11,6 @@
 
 copyrmd = function (){
 
-  files = list.files ()
+  files = list.files (pattern="Rmd")
   file.copy (files, paste0("../make/",files), overwrite = TRUE)
 }
