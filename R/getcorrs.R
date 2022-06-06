@@ -4,6 +4,7 @@
 #'
 #' --
 
+#' @rdname getcorrs
 #' @param model --.
 #' @param factor --.
 #' @export
@@ -35,3 +36,7 @@ getcorrs = function (model, factor){
   cormat
 }
 
+
+#' @rdname getcorrs
+#' @export
+get_corrs <- getcorrs
