@@ -3,6 +3,7 @@
 #'
 #' R2 with and without random effects.
 #'
+#' @rdname r2bayes
 #' @param model brms hypothesis object.
 #' @param re_formula --.
 #' @param summary --.
@@ -32,3 +33,6 @@ r2_bayes = function (model, re_formula = NULL, summary = TRUE){
   return (r2)
 }
 
+#' @rdname r2bayes
+#' @export
+r2bayes <- r2_bayes
