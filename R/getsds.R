@@ -3,6 +3,7 @@
 #'
 #' --
 
+#' @name getsds 
 #' @param model --.
 #' @export
 #' @examples
@@ -34,3 +35,7 @@ getsds = function (model){
   output
 }
 
+
+#' @rdname getsds
+#' @export
+get_sds <- getsds
