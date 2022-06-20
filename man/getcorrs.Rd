@@ -2,9 +2,12 @@
 % Please edit documentation in R/getcorrs.R
 \name{getcorrs}
 \alias{getcorrs}
+\alias{get_corrs}
 \title{Get random effect correlations}
 \usage{
 getcorrs(model, factor)
+
+get_corrs(model, factor)
 }
 \arguments{
 \item{model}{--.}

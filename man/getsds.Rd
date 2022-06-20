@@ -2,9 +2,12 @@
 % Please edit documentation in R/getsds.R
 \name{getsds}
 \alias{getsds}
+\alias{get_sds}
 \title{Get random effect standard deviations}
 \usage{
 getsds(model)
+
+get_sds(model)
 }
 \arguments{
 \item{model}{--.}

@@ -2,9 +2,12 @@
 % Please edit documentation in R/logits.R
 \name{antilogit}
 \alias{antilogit}
+\alias{ztop}
 \title{Convert logit to probability}
 \usage{
 antilogit(z)
+
+ztop(z)
 }
 \arguments{
 \item{z}{--.}

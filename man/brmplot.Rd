@@ -25,7 +25,7 @@ brmplot(
   robust = FALSE,
   yaxs = "r",
   xaxs = "r",
-  line = FALSE,
+  line = TRUE,
   nudge = 0,
   omit = 0,
   ...

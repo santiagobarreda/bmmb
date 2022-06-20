@@ -2,9 +2,12 @@
 % Please edit documentation in R/logits.R
 \name{logit}
 \alias{logit}
+\alias{ptoz}
 \title{Convert probability to logit}
 \usage{
 logit(p)
+
+ptoz(p)
 }
 \arguments{
 \item{p}{--.}
