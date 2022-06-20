@@ -61,6 +61,9 @@ wordcounts = function (folder = getwd()){
   words_words_total = 0
   words_total = 0
 
+  words_total_v = 0
+  words_words_total_v = 0
+
   for (i in 1:length(files)){
     rmd = readLines (files[i])
     words = unlist (strsplit (rmd, " "))
@@ -76,9 +79,13 @@ wordcounts = function (folder = getwd()){
     }
     words_total = words_total + length(words)
     words_words_total = words_words_total + length(words_words)
+    words_total_v[i] = length(words)
+    words_words_total_v[i] = length(words_words)
   }
 
   cat ("Total word count is: ",words_total,"\n")
   cat ("Word count without code chunks is: ",words_words_total,"\n")
+
+  return (cbind (words_total_v, words_words_total_v))
 }
 
