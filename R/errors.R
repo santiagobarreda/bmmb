@@ -30,9 +30,10 @@ rms = function (x){
 #'
 #'
 
-mae = function (x){
+mae = function (x, mean = FALSE){
   x = x[!is.na(x)]
-  return (stats::median (abs(x)))
+  if (!mean) return (stats::median (abs(x)))
+  if (mean) return (stats::mean (abs(x)))
 }
 
 
