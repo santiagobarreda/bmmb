@@ -17,7 +17,6 @@ antilogit = function (z) 1 / (1 + exp (-z) )
 
 
 #' @rdname antilogit
-#' @rdname getsds
 #' @export
 ztop <- antilogit
 
