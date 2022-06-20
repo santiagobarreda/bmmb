@@ -59,21 +59,3 @@ p_check = function (predictions, n_samples = 10, samples = NULL,
   }
 }
 
-
-
-#' Plot posterior samples in a data frame#'
-#' --
-#'
-#' @param model --.
-#' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
-#'
-
-get_samples = function (model){
-  output = data.frame (brms::as_draws_matrix(model))
-  return (output)
-}
-
