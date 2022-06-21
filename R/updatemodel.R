@@ -26,6 +26,3 @@ updatemodel = function (model, chapter = 0){
   file.copy (files, paste0("../make/",files), overwrite = TRUE)
 }
 
-
-model = readRDS ("F:\\storage\\OneDrive - University of California, Davis\\GitHub\\BMMRP\\models\\4_multilevel_L_S.RDS")
-
