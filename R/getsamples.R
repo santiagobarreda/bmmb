@@ -20,5 +20,5 @@ getsamples = function (model){
 
 #' @rdname getsamples
 #' @export
-get_samples <- getcorrs
+get_samples <- getsamples
 
