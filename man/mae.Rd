@@ -4,7 +4,7 @@
 \alias{mae}
 \title{Find median absolute error}
 \usage{
-mae(x)
+mae(x, mean = FALSE)
 }
 \arguments{
 \item{x}{--.}

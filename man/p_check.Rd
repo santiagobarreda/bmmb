@@ -5,17 +5,19 @@
 \title{Plot predictive checks}
 \usage{
 p_check(
-  predictions,
+  model,
+  show_data = FALSE,
   n_samples = 10,
   samples = NULL,
   xlim = NULL,
   ylim = NULL,
   ignore_extreme = TRUE,
+  re_formula = NULL,
   ...
 )
 }
 \arguments{
-\item{predictions}{--.}
+\item{model}{--.}
 
 \item{n_samples}{--.}
 

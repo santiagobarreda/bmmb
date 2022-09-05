@@ -5,7 +5,7 @@
 \alias{lee_etal_data}
 \title{Height data}
 \format{
-An object of class \code{data.frame} with 300 rows and 7 columns.
+An object of class \code{data.frame} with 300 rows and 11 columns.
 }
 \source{
 \url{https://github.com/santiagobarreda/FastTrackR}

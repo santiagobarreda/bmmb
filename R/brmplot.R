@@ -56,13 +56,13 @@ brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
 
     if (!add){
       plot (0, type='n', ylim = ylim,xlim=xlim, xlab=xlab,xaxt='n',ylab = ylab,
-            cex.axis=cex.axis,yaxs=yaxs,xaxs=xaxs,cex.lab=cex.lab,...)
+            cex.axis=cex.axis,yaxs=yaxs,xaxs=xaxs,cex.lab=cex.lab,lwd=lwd,...)
       if (grid) grid()
       if (line & horizontal) graphics::abline(h=0)
       if (line & !horizontal) graphics::abline(v=0)
-      graphics::points (xs,mat[,1], col=col,pch=pch,cex=cex)
+      graphics::points (xs,mat[,1], col=col,pch=pch,cex=cex,lwd=lwd)
     }
-    if (add)  graphics::points (xs, mat[,1], col=col, pch=pch,cex=cex)
+    if (add)  graphics::points (xs, mat[,1], col=col, pch=pch,cex=cex,lwd=lwd)
     if (is.na(las))las=1
     if (labels[1]!="") graphics::axis (side=1, at = xs, labels = labels, las=las, cex.axis=cex.axis)
 
@@ -82,10 +82,10 @@ brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
             cex.axis=cex.axis,yaxs=yaxs,xaxs=xaxs,cex.lab=cex.lab,...)
       if (grid) grid()
       if (line) graphics::abline(v=0)
-      graphics::points (mat[,1],xs, pch=pch, col=col,cex=cex)
+      graphics::points (mat[,1],xs, pch=pch, col=col,cex=cex,lwd=lwd)
 
     }
-    if (add) graphics::points (mat[,1],xs, pch=pch,cex=cex, col=col)
+    if (add) graphics::points (mat[,1],xs, pch=pch,cex=cex, col=col,lwd=lwd)
     if (is.na(las))las=2
     if (labels[1]!="") graphics::axis (side=2, at = xs, labels = labels, las=las, cex.axis=cex.axis)
 

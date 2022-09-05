@@ -15,6 +15,7 @@
 #'
 #'
 
+
 getcorrs = function (model, factor){
 
   components = brms::VarCorr(model)
@@ -23,16 +24,16 @@ getcorrs = function (model, factor){
   use = lower.tri (cormat[,1,])
 
   names = apply (expand.grid (rownames(cormat[,1,]), colnames(cormat[,1,])),1, paste, collapse=", ")
-  cormat = cbind (c(cormat[,1,]),
-                c(cormat[,2,]),
-                c(cormat[,3,]),
-                c(cormat[,4,]))
+  cormat = data.frame (Estimate =c(cormat[,1,]),
+                       Est.Error=c( cormat[,2,]),
+                       Q2.5=c(cormat[,3,]),
+                       Q97.5=c(cormat[,4,]))
   cormat = cormat[c(use),]
 
   labs = names[c(use)]
   labs = gsub ("Intercept", "Int.",  labs)
+
   rownames (cormat) = labs
-  colnames (cormat) = c("Estimate","Est.Error","Q2.5","Q97.5")
   cormat
 }
 
@@ -40,3 +41,6 @@ getcorrs = function (model, factor){
 #' @rdname getcorrs
 #' @export
 get_corrs <- getcorrs
+
+
+

@@ -36,11 +36,13 @@ short_summary = function (model, omit_conv_stats = TRUE, omit_corrs = FALSE, dig
       print(tmp[use, ])
     }
   }
-  cat("\nPopulation-Level Effects:\n")
-  if (omit_conv_stats) print(round(model$fixed[, 1:4], digits))
-  if (!omit_conv_stats) print(round(model$fixed, digits))
-  cat("\nFamily Specific Parameters:\n")
-  if (omit_conv_stats) print(round(model$spec_pars[, 1:4], digits))
-  if (!omit_conv_stats) print(round(model$spec_pars, digits))
+  if (nrow(model$spec_pars) > 0){
+    cat("\nPopulation-Level Effects:\n")
+    if (omit_conv_stats) print(round(model$fixed[, 1:4], digits))
+    if (!omit_conv_stats) print(round(model$fixed, digits))
+    cat("\nFamily Specific Parameters:\n")
+    if (omit_conv_stats) print(round(model$spec_pars[, 1:4], digits))
+    if (!omit_conv_stats) print(round(model$spec_pars, digits))
+  }
 }
 

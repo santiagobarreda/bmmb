@@ -4,7 +4,7 @@
 #'
 #' --
 #'
-#' @param predictions --.
+#' @param model --.
 #' @param n_samples --.
 #' @param samples --.
 #' @param xlim --.
@@ -17,45 +17,91 @@
 #'  # coming soon
 #' }
 
-p_check = function (predictions, n_samples = 10, samples = NULL,
-                    xlim = NULL, ylim = NULL, ignore_extreme = TRUE, ...){
+p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
+                    xlim = NULL, ylim = NULL, ignore_extreme = TRUE, re_formula = NULL, ...){
 
-  if (is.null(samples))  spots = sample (1:nrow(predictions), size = n_samples)
+  if (is.null(samples))  spots = sample (1:ndraws(model), size = n_samples)
   if (!is.null(samples)){
     spots = samples
     n_samples = length(spots)
   }
 
+  if (model$family$link!="logit")
+    predictions = predict (model, summary = FALSE, draw_ids = spots, re_formula = re_formula)
+  if (model$family$link=="logit")
+    predictions = fitted (model, summary = FALSE, draw_ids = spots,scale="linear", re_formula = re_formula)
+
   #if (is.null(xlim)) xlim = range (predictions[spots,])
   #if (is.null(xlim)) xlim = quantile(predictions[spots,], c(.01,.99))
 
-  maxy = 0
-  minx = 0
-  maxx = 0
-  dens = list()
-
   if (ignore_extreme){
-    tmp = predictions[spots,]
+    tmp = predictions
     tmp_median = stats::median(tmp)
     mad = stats::median(abs(tmp - tmp_median))
     from = tmp_median - 5*mad
     to = tmp_median + 5*mad
   }
 
-  for (i in 1:n_samples){
-    tmp = predictions[spots[i],]
-    if (ignore_extreme) tmp = tmp[tmp > from & tmp < to]
-    dens[[i]] = stats::density(tmp)
-    if (max(dens[[i]]$y) > maxy) maxy = max(dens[[i]]$y)
-    if (max(dens[[i]]$x) > maxx) maxx = max(dens[[i]]$x)
-    if (min(dens[[i]]$x) < minx) minx = min(dens[[i]]$x)
+  dens = list()
+  maxy = 0
+  minx = min(model$data[,1])
+  maxx = max(model$data[,1])
+
+  if (show_data){
+    dens[[1]] = stats::density (model$data[,1])
+    maxy = max(dens[[1]]$y)
+    minx = min(dens[[1]]$x)
+    maxx = max(dens[[1]]$x)
   }
+
+  for (i in 1:n_samples){
+    tmp = predictions[i,]
+    if (ignore_extreme) tmp = tmp[tmp > from & tmp < to]
+    dens[[i+1]] = stats::density(tmp)
+    if (max(dens[[i+1]]$y) > maxy) maxy = max(dens[[i+1]]$y)
+    if (max(dens[[i+1]]$x) > maxx) maxx = max(dens[[i+1]]$x)
+    if (min(dens[[i+1]]$x) < minx) minx = min(dens[[i+1]]$x)
+  }
+  if (!show_data) dens = dens[-1]
+
   if (is.null(ylim)) ylim = c(0,maxy) #* 1.05
   if (is.null(xlim)) xlim = c(minx,maxx)
 
-  plot (dens[[1]], xlim = xlim, ylim = ylim, main="", ...)
-  for (i in 1:n_samples){
-    graphics::lines (dens[[i]], col = bmmb::cols[[i]], lwd=4, lty=1, ...)
+  if (show_data){
+    plot (dens[[1]],type='l', xlim = xlim, ylim = ylim, main="", lwd=6,col=1,lty=2)
+    for (i in 2:(n_samples)+1){
+      graphics::lines (dens[[i]], col = bmmb::cols[[i-1]], lwd=4, lty=1)
+    }
   }
+  if (!show_data){
+    plot (dens[[1]],type='l', xlim = xlim, ylim = ylim, main="", bmmb::cols[[1]], lwd=4, lty=1)
+    for (i in 2:(n_samples)){
+      graphics::lines (dens[[i]], col = bmmb::cols[[i]], lwd=4, lty=1)
+    }
+  }
+
+  invisible (t(predictions))
+}
+
+
+#' Predictive one version of dependent variables
+#'
+#' --
+#'
+#' @param model --.
+#' @param draw_ids --.
+#' @param ... --.
+#' @export
+#' @examples
+#' \dontrun{
+#'  # coming soon
+#' }
+
+
+predict_n = function (model, n = 1, draw_ids = NULL,...){
+  if (is.null(draw_ids)) draw_ids = sample (1:ndraws(model),n)
+  y_hat = predict (height_model, draw_ids=draw_ids,summary=FALSE,...)
+  y_hat = t(y_hat)
+  y_hat
 }
 
