@@ -8,6 +8,8 @@ mae(x, mean = FALSE)
 }
 \arguments{
 \item{x}{--.}
+
+\item{mean}{--.}
 }
 \description{
 --
