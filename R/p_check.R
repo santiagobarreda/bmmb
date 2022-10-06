@@ -5,11 +5,15 @@
 #' --
 #'
 #' @param model --.
+#' @param show_data --.
 #' @param n_samples --.
 #' @param samples --.
 #' @param xlim --.
 #' @param ylim --.
+#' @param xlab --.
+#' @param ylab --.
 #' @param ignore_extreme --.
+#' @param re_formula --.
 #' @param ... --.
 #' @export
 #' @examples
@@ -18,18 +22,21 @@
 #' }
 
 p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
-                    xlim = NULL, ylim = NULL, ignore_extreme = TRUE, re_formula = NULL, ...){
+                    xlim = NULL, ylim = NULL,xlab = NULL, ylab = NULL, ignore_extreme = TRUE,
+                    re_formula = NULL, ...){
 
-  if (is.null(samples))  spots = sample (1:ndraws(model), size = n_samples)
+  if (is.null(samples))  spots = sample (1:brms::ndraws(model), size = n_samples)
   if (!is.null(samples)){
     spots = samples
     n_samples = length(spots)
   }
 
   if (model$family$link!="logit")
-    predictions = predict (model, summary = FALSE, draw_ids = spots, re_formula = re_formula)
+    predictions = stats::predict (model, summary = FALSE, draw_ids = spots,
+                                  re_formula = re_formula)
   if (model$family$link=="logit")
-    predictions = fitted (model, summary = FALSE, draw_ids = spots,scale="linear", re_formula = re_formula)
+    predictions = stats::fitted (model, summary = FALSE, draw_ids = spots,scale="linear",
+                                 re_formula = re_formula)
 
   #if (is.null(xlim)) xlim = range (predictions[spots,])
   #if (is.null(xlim)) xlim = quantile(predictions[spots,], c(.01,.99))
@@ -67,16 +74,21 @@ p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
   if (is.null(ylim)) ylim = c(0,maxy) #* 1.05
   if (is.null(xlim)) xlim = c(minx,maxx)
 
+  if (is.null(ylab)) ylab = "Density"
+  if (is.null(xlab)) xlab = "Predicted value"
+
   if (show_data){
-    plot (dens[[1]],type='l', xlim = xlim, ylim = ylim, main="", lwd=6,col=1,lty=2)
+    plot (dens[[1]]$x,dens[[1]]$y,type='l', xlim = xlim, ylim = ylim, main="", lwd=6,col=1,lty=2,
+          xlab=xlab,ylab=ylab,...)
     for (i in 2:(n_samples)+1){
-      graphics::lines (dens[[i]], col = bmmb::cols[[i-1]], lwd=4, lty=1)
+      graphics::lines (dens[[i]]$x,dens[[i]]$y, col = bmmb::cols[[i-1]], lwd=4, lty=1)
     }
   }
   if (!show_data){
-    plot (dens[[1]],type='l', xlim = xlim, ylim = ylim, main="", bmmb::cols[[1]], lwd=4, lty=1)
+    plot (dens[[1]]$x,dens[[1]]$y,type='l', xlim = xlim, ylim = ylim, main="", col = bmmb::cols[[1]], lwd=4,
+          xlab=xlab,ylab=ylab,lty=1,...)
     for (i in 2:(n_samples)){
-      graphics::lines (dens[[i]], col = bmmb::cols[[i]], lwd=4, lty=1)
+      graphics::lines (dens[[i]]$x,dens[[i]]$y, col = bmmb::cols[[i]], lwd=4, lty=1)
     }
   }
 
@@ -89,6 +101,7 @@ p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
 #' --
 #'
 #' @param model --.
+#' @param n --.
 #' @param draw_ids --.
 #' @param ... --.
 #' @export
@@ -99,8 +112,8 @@ p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
 
 
 predict_n = function (model, n = 1, draw_ids = NULL,...){
-  if (is.null(draw_ids)) draw_ids = sample (1:ndraws(model),n)
-  y_hat = predict (height_model, draw_ids=draw_ids,summary=FALSE,...)
+  if (is.null(draw_ids)) draw_ids = sample (1:brms::ndraws(model),n)
+  y_hat = stats::predict (model, draw_ids=draw_ids,summary=FALSE,...)
   y_hat = t(y_hat)
   y_hat
 }
