@@ -71,3 +71,16 @@ rtns = function (n,m=0,s=1,df){
   x = x + m
   x
 }
+
+#' Random generation of Bernoulli variable
+#'
+#' @param n --.
+#' @param p --.
+#' @export
+#' @examples
+#' \dontrun{
+#'  # coming soon
+#' }
+
+
+rbernoulli = function (n,p) stats::rbinom(n,1,p)
