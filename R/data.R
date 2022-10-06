@@ -165,7 +165,7 @@
 
 "height_data"
 
-#' Height data
+#' Lee et al. data
 #'
 #' The Hillenbrand et al. (1995) data. The formant columns are so that column FXY represents the frequency for the Xth formant, for the Yth time slice.
 #'
