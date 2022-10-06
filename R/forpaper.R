@@ -21,5 +21,5 @@ forpaper = function (x, digits = 2){
                       ", 95% C.I = [", round(x[i,3],digits),
                       ", ", round(x[i,4],digits), "])"))
   }
-  output
+  noquote(output)
 }
