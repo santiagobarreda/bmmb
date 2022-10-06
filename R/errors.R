@@ -22,6 +22,7 @@ rms = function (x){
 #'
 #' --
 #' @param x --.
+#' @param mean --.
 #' @export
 #' @examples
 #' \dontrun{
@@ -33,7 +34,7 @@ rms = function (x){
 mae = function (x, mean = FALSE){
   x = x[!is.na(x)]
   if (!mean) return (stats::median (abs(x)))
-  if (mean) return (stats::mean (abs(x)))
+  if (mean) return (mean (abs(x)))
 }
 
 
