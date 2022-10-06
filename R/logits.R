@@ -3,7 +3,7 @@
 #'
 #' --
 #'
-#' @rdname antilogit
+#' @rdname inverse_logit
 #' @param z --.
 #' @export
 #' @examples
@@ -13,12 +13,12 @@
 #'
 #'
 
-antilogit = function (z) 1 / (1 + exp (-z) )
+inverse_logit = function (z) 1 / (1 + exp (-z) )
 
 
-#' @rdname antilogit
+#' @rdname inverse_logit
 #' @export
-ztop <- antilogit
+ztop <- inverse_logit
 
 
 #' Convert probability to logit
