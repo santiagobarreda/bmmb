@@ -19,6 +19,8 @@ p_check(
 \arguments{
 \item{model}{--.}
 
+\item{show_data}{--.}
+
 \item{n_samples}{--.}
 
 \item{samples}{--.}
@@ -28,6 +30,8 @@ p_check(
 \item{ylim}{--.}
 
 \item{ignore_extreme}{--.}
+
+\item{re_formula}{--.}
 
 \item{...}{--.}
 }

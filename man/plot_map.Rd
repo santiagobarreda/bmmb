@@ -5,12 +5,18 @@
 \title{Plot territorial maps
 --}
 \usage{
-plot_map(maps, new = TRUE, colors = NULL)
+plot_map(maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL)
 }
 \arguments{
 \item{maps}{--.}
 
 \item{new}{--.}
+
+\item{colors}{--.}
+
+\item{xlim}{--.}
+
+\item{ylim}{--.}
 }
 \description{
 Plot territorial maps

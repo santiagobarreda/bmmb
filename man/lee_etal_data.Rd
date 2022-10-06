@@ -3,7 +3,7 @@
 \docType{data}
 \name{lee_etal_data}
 \alias{lee_etal_data}
-\title{Height data}
+\title{Lee et al. data}
 \format{
 An object of class \code{data.frame} with 300 rows and 11 columns.
 }

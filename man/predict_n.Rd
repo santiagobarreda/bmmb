@@ -9,6 +9,8 @@ predict_n(model, n = 1, draw_ids = NULL, ...)
 \arguments{
 \item{model}{--.}
 
+\item{n}{--.}
+
 \item{draw_ids}{--.}
 
 \item{...}{--.}
