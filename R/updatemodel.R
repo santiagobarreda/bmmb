@@ -3,8 +3,8 @@
 #'
 #' --
 #'
-#' @param predictions --.
-#' @param n_samples --.
+#' @param model --.
+#' @param chapter --.
 #' @export
 #' @examples
 #' \dontrun{
