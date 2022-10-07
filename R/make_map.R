@@ -9,6 +9,7 @@
 #' @param plot --.
 #' @param new --.
 #' @param points --.
+#' @param ... --.
 #' @export
 #' @examples
 #' \dontrun{
