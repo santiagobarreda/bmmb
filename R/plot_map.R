@@ -7,6 +7,7 @@
 #' @param colors --.
 #' @param xlim --.
 #' @param ylim --.
+#' @param ... --.
 #' @export
 #' @examples
 #' \dontrun{
