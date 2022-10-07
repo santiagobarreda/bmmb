@@ -15,7 +15,8 @@
 #'
 #'
 
-plot_map = function (maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL){
+plot_map = function (maps, new = TRUE, colors = NULL, xlim = NULL,
+                     ylim = NULL,...){
 
   if (is.null(xlim)){
     tmp = do.call(rbind,maps)
@@ -26,7 +27,7 @@ plot_map = function (maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL){
     ylim = range(tmp[,2])
   }
   if (new)
-    plot(0, type = "n", xlim = xlim, ylim = ylim, xaxs='i',yaxs='i')
+    plot(0, type = "n", xlim = xlim, ylim = ylim, xaxs='i',yaxs='i',...)
   if (all(is.null(colors)))
     colors = rep(15, grDevices::adjustcolor(bmmb::cols[i],
                                             alpha.f = 0.2), 10)
