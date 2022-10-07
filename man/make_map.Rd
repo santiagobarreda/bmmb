@@ -11,7 +11,9 @@ make_map(
   ylim = NULL,
   density = 1000,
   plot = FALSE,
-  new = TRUE
+  new = TRUE,
+  points = NULL,
+  ...
 )
 }
 \arguments{
@@ -26,6 +28,10 @@ make_map(
 \item{plot}{--.}
 
 \item{new}{--.}
+
+\item{points}{--.}
+
+\item{...}{--.}
 }
 \description{
 Make territorial map from planes

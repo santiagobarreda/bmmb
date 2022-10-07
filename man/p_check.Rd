@@ -11,6 +11,8 @@ p_check(
   samples = NULL,
   xlim = NULL,
   ylim = NULL,
+  xlab = NULL,
+  ylab = NULL,
   ignore_extreme = TRUE,
   re_formula = NULL,
   ...
@@ -28,6 +30,10 @@ p_check(
 \item{xlim}{--.}
 
 \item{ylim}{--.}
+
+\item{xlab}{--.}
+
+\item{ylab}{--.}
 
 \item{ignore_extreme}{--.}
 

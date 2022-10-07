@@ -5,7 +5,7 @@
 \title{Plot territorial maps
 --}
 \usage{
-plot_map(maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL)
+plot_map(maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL, ...)
 }
 \arguments{
 \item{maps}{--.}
@@ -17,6 +17,8 @@ plot_map(maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL)
 \item{xlim}{--.}
 
 \item{ylim}{--.}
+
+\item{...}{--.}
 }
 \description{
 Plot territorial maps
