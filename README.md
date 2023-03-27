@@ -2,7 +2,7 @@
 
 The companion R package for the book:
 
-## Bayesian multilevel models for repeated measures data: A conceptual and practical introduction in R
+### Bayesian multilevel models for repeated measures data: A conceptual and practical introduction in R
 Santiago Barreda & Noah Silbert
  
 [Bookdown Version](https://santiagobarreda.github.io/bmmrmd/)
@@ -15,6 +15,6 @@ Santiago Barreda & Noah Silbert
  *expected spring 2023* 
 
 
-### To install:
+#### To install:
 
 devtools::install_github("santiagobarreda/bmmb")
