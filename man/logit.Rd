@@ -15,10 +15,3 @@ ptoz(p)
 \description{
 Convert probability to logit
 }
-\examples{
-\dontrun{
---
-}
-
-
-}

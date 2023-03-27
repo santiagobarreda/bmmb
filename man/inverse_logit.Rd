@@ -15,10 +15,3 @@ ztop(z)
 \description{
 Convert logits to probabilities
 }
-\examples{
-\dontrun{
---
-}
-
-
-}
