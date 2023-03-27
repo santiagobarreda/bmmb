@@ -4,10 +4,6 @@
 #' @rdname inverse_logit
 #' @param z a scalar logit value, or a vector of scalars.
 #' @export
-#' @examples
-#' \dontrun{
-#' --
-#' }
 #'
 #'
 
@@ -24,10 +20,6 @@ ztop <- inverse_logit
 #' @rdname logit
 #' @param p a probability, or a vector of probabilities.
 #' @export
-#' @examples
-#' \dontrun{
-#' --
-#' }
 #'
 #'
 
@@ -41,3 +33,4 @@ logit = function (p){
 #' @rdname logit
 #' @export
 ptoz <- logit
+
