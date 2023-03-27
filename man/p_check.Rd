@@ -19,33 +19,36 @@ p_check(
 )
 }
 \arguments{
-\item{model}{--.}
+\item{model}{the brms model to use for prediction.}
 
-\item{show_data}{--.}
+\item{show_data}{if TRUE, actual data is compared to predictions.}
 
-\item{n_samples}{--.}
+\item{n_samples}{the number of samples to be drawn.}
 
-\item{samples}{--.}
+\item{samples}{A number or vector of specific samples to be drawn. If not provided, random samples are selected.}
 
-\item{xlim}{--.}
+\item{xlim}{plot x axis limits.}
 
-\item{ylim}{--.}
+\item{ylim}{plot y axis limits.}
 
-\item{xlab}{--.}
+\item{xlab}{x axis label.}
 
-\item{ylab}{--.}
+\item{ylab}{y axis label.}
 
-\item{ignore_extreme}{--.}
+\item{ignore_extreme}{should extreme values be ignored? This is useful for response distributions with large outliers such as t.}
 
-\item{re_formula}{--.}
+\item{re_formula}{formula containing group-level effects to be considered in the prediction. If NULL (default), include all group-level effects; if NA, include no group-level effects.}
 
-\item{...}{--.}
+\item{...}{additional arguments are passed to the internal call of plot().}
 }
 \description{
---
+Gets predictive samples (prior or posterior) from a brms model. Generates a histogram comparing distributions of samples (and optionally to the data) and returns a dataframe containing these predictions.
 }
 \examples{
 \dontrun{
- # coming soon
+model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+
+samples = bmmb::p_check (model_height_vtl, show_data=TRUE)
+head (samples)
 }
 }

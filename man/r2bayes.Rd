@@ -3,21 +3,27 @@
 \name{r2_bayes}
 \alias{r2_bayes}
 \alias{r2bayes}
+\alias{R2_bayes}
+\alias{R2bayes}
 \title{Bayesian R2}
 \usage{
 r2_bayes(model, re_formula = NULL, summary = TRUE)
 
 r2bayes(model, re_formula = NULL, summary = TRUE)
+
+R2_bayes(model, re_formula = NULL, summary = TRUE)
+
+R2bayes(model, re_formula = NULL, summary = TRUE)
 }
 \arguments{
 \item{model}{brms hypothesis object.}
 
-\item{re_formula}{--.}
+\item{re_formula}{formula containing group-level effects to be considered in the prediction. If NULL (default), include all group-level effects; if NA, include no group-level effects.}
 
-\item{summary}{--.}
+\item{summary}{if TRUE, R2 values are summarized.}
 }
 \description{
-R2 with and without random effects.
+Calculate Bayesian R2 with control over which random effects are included. This function uses the method described in: Gelman, A., Goodrich, B., Gabry, J., & Vehtari, A. (2019). R-squared for Bayesian regression models. The American Statistician, 73(3), 307–309.
 }
 \examples{
 \dontrun{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/brmplot.R
 \name{brmplot}
 \alias{brmplot}
-\title{Plot brm parameters and intervals}
+\title{Plot brm parameter information}
 \usage{
 brmplot(
   mat,
@@ -22,7 +22,6 @@ brmplot(
   cex.axis = 1,
   grid = TRUE,
   cex.lab = 1,
-  robust = FALSE,
   yaxs = "r",
   xaxs = "r",
   line = TRUE,
@@ -38,57 +37,54 @@ brmplot(
 
 \item{xlim}{optionally override the plot x range.}
 
-\item{horizontal}{--.}
+\item{horizontal}{if TRUE, plot parameters across the x axis.}
 
-\item{add}{--.}
+\item{add}{if TRUE, add to existing plot.}
 
-\item{xs}{--.}
+\item{xs}{provide x axis location for plotting parameters.}
 
-\item{col}{--.}
+\item{col}{color for points and intervals.}
 
-\item{labels}{--.}
+\item{labels}{a vector of labels. If "", labels are blank.}
 
-\item{xlab}{--.}
+\item{xlab}{optionally override the plot x axis range.}
 
-\item{ylab}{--.}
+\item{ylab}{optionally override the plot y axis range.}
 
-\item{pch}{--.}
+\item{pch}{points for parameter means.}
 
-\item{lwd}{--.}
+\item{lwd}{line widths for intervals.}
 
-\item{cex}{--.}
+\item{cex}{point size for parameter means.}
 
-\item{las}{--.}
+\item{las}{orientation of axis labels.}
 
-\item{cex.axis}{--.}
+\item{cex.axis}{expansion of axis tick numbers.}
 
-\item{grid}{--.}
+\item{grid}{if TRUE, a grid is added.}
 
-\item{cex.lab}{--.}
+\item{cex.lab}{expansion of axis labels.}
 
-\item{robust}{--.}
+\item{yaxs}{y axis edge settings.}
 
-\item{yaxs}{--.}
+\item{xaxs}{x axis edge settings.}
 
-\item{xaxs}{--.}
+\item{line}{if TRUE, add a line at x=0.}
 
-\item{line}{--.}
+\item{nudge}{nudge points along x axis by this amount.}
 
-\item{nudge}{--.}
+\item{omit}{a vector of parameters to be omitted.}
 
-\item{omit}{--.}
-
-\item{...}{--.}
-}
-\value{
---.
+\item{...}{additional parameters are passed to internal call of brmplot.}
 }
 \description{
 Make plots of brm model parameter means and intervals.
 }
 \examples{
 \dontrun{
- # coming soon
+model_height_vtl = brms::get_model("11_model_height_vtl_f0")
+fixed_effects = fixef (model_height_vtl)
+brmplot (fixed_effects, omit = 1)
 }
 
 }

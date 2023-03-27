@@ -2,32 +2,23 @@
 % Please edit documentation in R/plot_map.R
 \name{plot_map}
 \alias{plot_map}
-\title{Plot territorial maps
---}
+\title{Plot territorial maps}
 \usage{
 plot_map(maps, new = TRUE, colors = NULL, xlim = NULL, ylim = NULL, ...)
 }
 \arguments{
-\item{maps}{--.}
+\item{maps}{the output of bmmb::make_map.}
 
-\item{new}{--.}
+\item{new}{if TRUE, a new plot is created.}
 
-\item{colors}{--.}
+\item{colors}{a vector of colors, one for each territory.}
 
-\item{xlim}{--.}
+\item{xlim}{plot x axis limits.}
 
-\item{ylim}{--.}
+\item{ylim}{plot y axis limits.}
 
-\item{...}{--.}
+\item{...}{additional parameters are passed to the internal call of plot().}
 }
 \description{
-Plot territorial maps
---
-}
-\examples{
-\dontrun{
- # coming soon
-}
-
-
+Plot territorial maps estimated using the bmmb::make_map function provided in this package. See chapter 12 for usage examples.
 }

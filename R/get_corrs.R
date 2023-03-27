@@ -2,19 +2,21 @@
 
 #' Get random effect correlations
 #'
-#' --
+#' Gets summaries of random effects correlations from a brms model.
 
 #' @rdname getcorrs
-#' @param model --.
-#' @param factor --.
+#' @param model The brms model.
+#' @param factor The factor you want correlations for.
 #' @export
 #' @examples
 #' \dontrun{
-#' --
+#' model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+#'
+#' # Correlations between listener (L) random effects
+#' bmmb::get_corrs (model_height_vtl, "L")
 #' }
 #'
 #'
-
 
 getcorrs = function (model, factor){
 

@@ -7,10 +7,10 @@
 lkjcorrdensity(eta = 2)
 }
 \arguments{
-\item{eta}{--.}
+\item{eta}{distribution eta parameter.}
 }
 \description{
---
+LKJ correlation prior density
 }
 \examples{
 \dontrun{

@@ -1,10 +1,8 @@
 
-#' Convert logit to probability
-#'
-#' --
+#' Convert logits to probabilities
 #'
 #' @rdname inverse_logit
-#' @param z --.
+#' @param z a scalar logit value, or a vector of scalars.
 #' @export
 #' @examples
 #' \dontrun{
@@ -23,10 +21,8 @@ ztop <- inverse_logit
 
 #' Convert probability to logit
 #'
-#' --
-#'
 #' @rdname logit
-#' @param p --.
+#' @param p a probability, or a vector of probabilities.
 #' @export
 #' @examples
 #' \dontrun{

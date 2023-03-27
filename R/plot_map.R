@@ -1,19 +1,15 @@
 
 #' Plot territorial maps
-#' --
 #'
-#' @param maps --.
-#' @param new --.
-#' @param colors --.
-#' @param xlim --.
-#' @param ylim --.
-#' @param ... --.
+#' Plot territorial maps estimated using the bmmb::make_map function provided in this package. See chapter 12 for usage examples.
+#'
+#' @param maps the output of bmmb::make_map.
+#' @param new if TRUE, a new plot is created.
+#' @param colors a vector of colors, one for each territory.
+#' @param xlim plot x axis limits.
+#' @param ylim plot y axis limits.
+#' @param ... additional parameters are passed to the internal call of plot().
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
-#'
 #'
 
 plot_map = function (maps, new = TRUE, colors = NULL, xlim = NULL,

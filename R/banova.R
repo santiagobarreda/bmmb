@@ -1,15 +1,17 @@
 
 #' Bayesian ANOVA
 #'
-#' --
+#' Function to carry out a simplified Bayesian Analysis of Variance (BANOVA).
 #'
-#' @param model --.
-#' @param superpopulation --.
-#' @param collapse --.
+#' @param model Your model object.
+#' @param superpopulation Set to TRUE if you want the superpopulation standard deviation. If FALSE, the finite population standard deviation is calculated.
+#' @param collapse If TRUE, returns a single dataframe. If FALSE, returns a list of dataframes.
 #' @export
 #' @examples
 #' \dontrun{
-#' --
+#' model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+#' options (contrasts = c('contr.sum','contr.sum'))
+#' bmmb::banova (model_height_vtl)
 #' }
 #'
 #'

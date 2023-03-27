@@ -3,22 +3,21 @@
 \name{prior_summary}
 \alias{prior_summary}
 \title{Summarize priors in brms models
---}
+Information about priors from an existing brms model. This just calls brms::prior_summary but changes the output of the formatting slightly to allow for columns to be imitted from the output. Please see the help file for brms::prior_summary for more information.}
 \usage{
-prior_summary(model, all = TRUE)
+prior_summary(model)
 }
 \arguments{
-\item{model}{--.#'}
-
-\item{all}{--.}
+\item{model}{The brms model.}
 }
 \description{
 Summarize priors in brms models
---
+Information about priors from an existing brms model. This just calls brms::prior_summary but changes the output of the formatting slightly to allow for columns to be imitted from the output. Please see the help file for brms::prior_summary for more information.
 }
 \examples{
 \dontrun{
- # coming soon
+model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+bmmb::prior_summary (model_height_vtl)
 }
 
 

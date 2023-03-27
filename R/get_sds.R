@@ -1,18 +1,19 @@
 
 #' Get random effect standard deviations
 #'
-#' --
-
-#' @name getsds 
-#' @param model --.
+#' Gets summaries of the random effect standard deviations from a brms model.
+#'
+#' @name getsds
+#' @param model The brms model.
 #' @export
 #' @examples
 #' \dontrun{
-#' --
+#' model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+#'
+#' # Standard deviations of different groups of random effects
+#' bmmb::get_sds (model_height_vtl)
 #' }
 #'
-#'
-
 
 getsds = function (model){
 

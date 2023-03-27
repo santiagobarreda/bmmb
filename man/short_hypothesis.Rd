@@ -7,15 +7,10 @@
 short_hypothesis(x, ...)
 }
 \arguments{
-\item{x}{brms hypothesis object.}
+\item{x}{the brms model.}
 
-\item{...}{--.}
+\item{...}{additional arguments passed to brms::hypothesis.}
 }
 \description{
-Shorter brms hypothesis print statement.
-}
-\examples{
-\dontrun{
- # coming soon
-}
+This is just a clone of brms::hypothesis with a smaller print statement, needed to get output to fit in the width of a book page. Please see the help file for brms::hypothesis for more information.
 }

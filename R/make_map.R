@@ -1,21 +1,17 @@
 
 #' Make territorial map from planes
-#' --
 #'
-#' @param parameters --.
-#' @param xlim --.
-#' @param ylim --.
-#' @param density --.
-#' @param plot --.
-#' @param new --.
-#' @param points --.
-#' @param ... --.
+#' Make territorial maps estimated based on multinomial regression models. See chapter 12 for usage examples and a more detailed description.
+#'
+#' @param parameters a matrix containing the parameters of the surfaces representing each category.
+#' @param xlim the x axis range for boundary calculations.
+#' @param ylim the x axis range for boundary calculations.
+#' @param density the number of points sampled along the x and y axis ranges.
+#' @param plot if TRUE, the results are plotted.
+#' @param new if TRUE, a new plot is created.
+#' @param points if a set of x and y axis points are provided, plot ranges are based on the area covered by the points.
+#' @param ... additional parameters are passed to internal call of bmmb::plot_map().
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
-#'
 #'
 
 

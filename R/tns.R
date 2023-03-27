@@ -1,15 +1,12 @@
 
 #' Distribution function for non-standardized t distribution
 #'
-#' @param x --.
-#' @param m --.
-#' @param s --.
-#' @param df --.
+#' @param x vector of probabilities.
+#' @param m distribution mean.
+#' @param s distribution scale.
+#' @param df degrees of freedom.
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
+
 
 ptns = function (x,m=0,s=1,df){
   x = x - m
@@ -19,15 +16,11 @@ ptns = function (x,m=0,s=1,df){
 
 #' Density function for non-standardized t distribution
 #'
-#' @param x --.
-#' @param m --.
-#' @param s --.
-#' @param df --.
+#' @param x vector of quantiles.
+#' @param m distribution mean.
+#' @param s distribution scale.
+#' @param df degrees of freedom.
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
 
 dtns = function (x,m=0,s=1,df){
   x = x - m
@@ -37,15 +30,11 @@ dtns = function (x,m=0,s=1,df){
 
 #' Quantile function for non-standardized t distribution
 #'
-#' @param x --.
-#' @param m --.
-#' @param s --.
-#' @param df --.
+#' @param x vector of quantiles.
+#' @param m distribution mean.
+#' @param s distribution scale.
+#' @param df degrees of freedom.
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
 
 qtns = function (x,m=0,s=1,df){
   x = x - m
@@ -55,15 +44,11 @@ qtns = function (x,m=0,s=1,df){
 
 #' Random generation of non-standardized t distributed numbers
 #'
-#' @param n --.
-#' @param m --.
-#' @param s --.
-#' @param df --.
+#' @param n number of observations
+#' @param m distribution mean.
+#' @param s distribution scale.
+#' @param df degrees of freedom.
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
 
 rtns = function (n,m=0,s=1,df){
   x = stats::rt (n,df)
@@ -74,13 +59,9 @@ rtns = function (n,m=0,s=1,df){
 
 #' Random generation of Bernoulli variable
 #'
-#' @param n --.
-#' @param p --.
+#' @param n number of observations.
+#' @param p probability of a success.
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
 
 
 rbernoulli = function (n,p) stats::rbinom(n,1,p)

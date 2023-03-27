@@ -7,19 +7,14 @@
 ptns(x, m = 0, s = 1, df)
 }
 \arguments{
-\item{x}{--.}
+\item{x}{vector of probabilities.}
 
-\item{m}{--.}
+\item{m}{distribution mean.}
 
-\item{s}{--.}
+\item{s}{distribution scale.}
 
-\item{df}{--.}
+\item{df}{degrees of freedom.}
 }
 \description{
 Distribution function for non-standardized t distribution
-}
-\examples{
-\dontrun{
- # coming soon
-}
 }

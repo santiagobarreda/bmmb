@@ -7,32 +7,22 @@
 \format{
 An object of class \code{data.frame} with 38 rows and 6 columns.
 }
-\source{
-\url{https://github.com/santiagobarreda/FastTrackR}
-}
 \usage{
 height_data
 }
 \description{
-The Hillenbrand et al. (1995) data. The formant columns are so that column FXY represents the frequency for the Xth formant, for the Yth time slice.
+Data regarding the heights of males and females of different ages. From: Fryar, C. D., Gu, Q., & Ogden, C. L. (2012). Anthropometric reference data for children and adults: United States, 2007-2010. Vital and Health Statistics. Series 11, Data from the National Health Survey, 252, 1–48.
 }
 \section{Columns}{
 
 \describe{
-\item{file}{the recording file name.}
-\item{f0}{average f0 in Hertz.}
-\item{duration}{vowel duration in milliseconds.}
-\item{label}{The label used for plotting the vowel.}
-\item{group}{A group number, used for plotting}
-\item{color}{The color Praat will use for plotting.}
-\item{number}{The file number.}
-\item{f11}{The average frequency for the first formant, for the first time slice.}
-\item{f21}{The average frequency for the second formant, for the first time slice.}
-\item{...}{And so on.}
+\item{age}{The agre group, in years.}
+\item{gender}{The group gender, male or female}
+\item{height}{Height, in centimeters}
+\item{sesm}{The standard error of the sample mean.}
+\item{sd}{The standard deviation, calculated using the sesm and sample size}
+\item{sample}{The size of the sample for each agre and gender group.}
 }
 }
 
-\references{
-Hillenbrand, J.M., Getty, L.A., Clark, M.J., and Wheeler, K. (1995). "Acoustic characteristics of American English vowels," Journal of the Acoustical Society of America, 97, 3099-3111.
-}
 \keyword{datasets}

@@ -1,14 +1,14 @@
 
-#' Make output pastable into paper
-#'
-#' --
+#' Format table output for copying into a paper
 #'
 #' @param x --.
 #' @param digits --.
 #' @export
 #' @examples
 #' \dontrun{
-#'  # coming soon
+#' model_height_vtl = brms::get_model("11_model_height_vtl_f0")
+#' fixed_effects = fixef (model_height_vtl)
+#' forpaper (fixed_effects)
 #' }
 
 
@@ -23,3 +23,8 @@ forpaper = function (x, digits = 2){
   }
   noquote(output)
 }
+
+
+#' @rdname forpaper
+#' @export
+for_paper <- forpaper

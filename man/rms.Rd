@@ -2,20 +2,13 @@
 % Please edit documentation in R/errors.R
 \name{rms}
 \alias{rms}
-\title{Find root mean square}
+\title{Find the root mean squared error}
 \usage{
 rms(x)
 }
 \arguments{
-\item{x}{--.}
+\item{x}{a vector of numbers.}
 }
 \description{
---
-}
-\examples{
-\dontrun{
---
-}
-
-
+Find the root mean squared error
 }

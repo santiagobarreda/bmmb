@@ -7,16 +7,16 @@
 predict_n(model, n = 1, draw_ids = NULL, ...)
 }
 \arguments{
-\item{model}{--.}
+\item{model}{brms model.}
 
-\item{n}{--.}
+\item{n}{the number of samples to get.}
 
-\item{draw_ids}{--.}
+\item{draw_ids}{a vector of specific samples if desired.}
 
-\item{...}{--.}
+\item{...}{additional parameters passed to internal call of predict().}
 }
 \description{
---
+Get posterior predictions.
 }
 \examples{
 \dontrun{

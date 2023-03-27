@@ -1,44 +1,44 @@
 
-#' Plot brm parameters and intervals
+#' Plot brm parameter information
 #'
 #' Make plots of brm model parameter means and intervals.
 #'
 #' @param mat a dataframe or matrix representing the posterior summary of brms model parameters.
 #' @param ylim optionally override the plot y range.
 #' @param xlim optionally override the plot x range.
-#' @param horizontal --.
-#' @param add --.
-#' @param xs --.
-#' @param col --.
-#' @param labels --.
-#' @param xlab --.
-#' @param ylab --.
-#' @param pch --.
-#' @param lwd --.
-#' @param cex --.
-#' @param las --.
-#' @param cex.axis --.
-#' @param grid --.
-#' @param cex.lab --.
-#' @param robust --.
-#' @param yaxs --.
-#' @param xaxs --.
-#' @param line --.
-#' @param nudge --.
-#' @param omit --.
-#' @param ... --.
-#' @return --.
+#' @param horizontal if TRUE, plot parameters across the x axis.
+#' @param add if TRUE, add to existing plot.
+#' @param xs provide x axis location for plotting parameters.
+#' @param col color for points and intervals.
+#' @param labels a vector of labels. If "", labels are blank.
+#' @param xlab optionally override the plot x axis range.
+#' @param ylab optionally override the plot y axis range.
+#' @param pch points for parameter means.
+#' @param lwd line widths for intervals.
+#' @param cex point size for parameter means.
+#' @param las orientation of axis labels.
+#' @param cex.axis expansion of axis tick numbers.
+#' @param grid if TRUE, a grid is added.
+#' @param cex.lab expansion of axis labels.
+#' @param yaxs y axis edge settings.
+#' @param xaxs x axis edge settings.
+#' @param line if TRUE, add a line at x=0.
+#' @param nudge nudge points along x axis by this amount.
+#' @param omit a vector of parameters to be omitted.
+#' @param ... additional parameters are passed to internal call of brmplot.
 #' @export
 #' @examples
 #' \dontrun{
-#'  # coming soon
+#' model_height_vtl = brms::get_model("11_model_height_vtl_f0")
+#' fixed_effects = fixef (model_height_vtl)
+#' brmplot (fixed_effects, omit = 1)
 #' }
 #'
 
 brmplot = function (mat, ylim=NULL, xlim = NULL, horizontal = TRUE, add = FALSE,
                     xs = NULL, col = 1, labels = "default",xlab='',ylab='',
                     pch=16, lwd=2,cex=1.5, las=NA,cex.axis=1,grid=TRUE,cex.lab=1,
-                    robust = FALSE, yaxs="r",xaxs="r",line=TRUE, nudge =0,omit=0,...){
+                    yaxs="r",xaxs="r",line=TRUE, nudge =0,omit=0,...){
 
   if (class(mat)[1] == "brmsfit") mat = brms::fixef(mat)
   #if (class(mat)[1] == "short_hypothesis") mat = mat[[1]]

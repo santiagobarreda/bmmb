@@ -2,23 +2,26 @@
 
 #' Plot predictive checks
 #'
-#' --
+#' Gets predictive samples (prior or posterior) from a brms model. Generates a histogram comparing distributions of samples (and optionally to the data) and returns a dataframe containing these predictions.
 #'
-#' @param model --.
-#' @param show_data --.
-#' @param n_samples --.
-#' @param samples --.
-#' @param xlim --.
-#' @param ylim --.
-#' @param xlab --.
-#' @param ylab --.
-#' @param ignore_extreme --.
-#' @param re_formula --.
-#' @param ... --.
+#' @param model the brms model to use for prediction.
+#' @param show_data if TRUE, actual data is compared to predictions.
+#' @param n_samples the number of samples to be drawn.
+#' @param samples A number or vector of specific samples to be drawn. If not provided, random samples are selected.
+#' @param xlim plot x axis limits.
+#' @param ylim plot y axis limits.
+#' @param xlab x axis label.
+#' @param ylab y axis label.
+#' @param ignore_extreme should extreme values be ignored? This is useful for response distributions with large outliers such as t.
+#' @param re_formula formula containing group-level effects to be considered in the prediction. If NULL (default), include all group-level effects; if NA, include no group-level effects.
+#' @param ... additional arguments are passed to the internal call of plot().
 #' @export
 #' @examples
 #' \dontrun{
-#'  # coming soon
+#' model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+#'
+#' samples = bmmb::p_check (model_height_vtl, show_data=TRUE)
+#' head (samples)
 #' }
 
 p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
@@ -98,12 +101,12 @@ p_check = function (model, show_data = FALSE, n_samples = 10, samples = NULL,
 
 #' Predictive one version of dependent variables
 #'
-#' --
+#' Get posterior predictions.
 #'
-#' @param model --.
-#' @param n --.
-#' @param draw_ids --.
-#' @param ... --.
+#' @param model brms model.
+#' @param n the number of samples to get.
+#' @param draw_ids a vector of specific samples if desired.
+#' @param ... additional parameters passed to internal call of predict().
 #' @export
 #' @examples
 #' \dontrun{

@@ -1,15 +1,13 @@
 
 #' Short hypothesis printout
 #'
-#' Shorter brms hypothesis print statement.
+#' This is just a clone of brms::hypothesis with a smaller print statement, needed to get output to fit in the width of a book page. Please see the help file for brms::hypothesis for more information.
 #'
-#' @param x brms hypothesis object.
-#' @param ... --.
+#' @param x the brms model.
+#' @param ... additional arguments passed to brms::hypothesis.
 #' @export
-#' @examples
-#' \dontrun{
-#'  # coming soon
-#' }
+#'
+#'
 
 short_hypothesis = function (x, ...){
   tmp =brms::hypothesis (x, ...)
@@ -22,14 +20,6 @@ short_hypothesis = function (x, ...){
   if (!is.null(tmp[[1]]$Group)) output$group = tmp[[1]]$Group
 
   attr(output,"samples") = tmp[[2]]
-
-  #output = list()
-  #output[[1]] = brms::posterior_summary  (tmp$samples)
-  #output = data.frame (output)
-  #output$hypotheses = tmp[[1]][[1]]
-  #output$samples = tmp[[2]]
-
-  #class(output) = "short_hypothesis"
 
   return (output)
 }

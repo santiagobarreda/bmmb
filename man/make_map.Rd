@@ -2,8 +2,7 @@
 % Please edit documentation in R/make_map.R
 \name{make_map}
 \alias{make_map}
-\title{Make territorial map from planes
---}
+\title{Make territorial map from planes}
 \usage{
 make_map(
   parameters,
@@ -17,30 +16,22 @@ make_map(
 )
 }
 \arguments{
-\item{parameters}{--.}
+\item{parameters}{a matrix containing the parameters of the surfaces representing each category.}
 
-\item{xlim}{--.}
+\item{xlim}{the x axis range for boundary calculations.}
 
-\item{ylim}{--.}
+\item{ylim}{the x axis range for boundary calculations.}
 
-\item{density}{--.}
+\item{density}{the number of points sampled along the x and y axis ranges.}
 
-\item{plot}{--.}
+\item{plot}{if TRUE, the results are plotted.}
 
-\item{new}{--.}
+\item{new}{if TRUE, a new plot is created.}
 
-\item{points}{--.}
+\item{points}{if a set of x and y axis points are provided, plot ranges are based on the area covered by the points.}
 
-\item{...}{--.}
+\item{...}{additional parameters are passed to internal call of bmmb::plot_map().}
 }
 \description{
-Make territorial map from planes
---
-}
-\examples{
-\dontrun{
- # coming soon
-}
-
-
+Make territorial maps estimated based on multinomial regression models. See chapter 12 for usage examples and a more detailed description.
 }

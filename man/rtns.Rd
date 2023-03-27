@@ -7,19 +7,14 @@
 rtns(n, m = 0, s = 1, df)
 }
 \arguments{
-\item{n}{--.}
+\item{n}{number of observations}
 
-\item{m}{--.}
+\item{m}{distribution mean.}
 
-\item{s}{--.}
+\item{s}{distribution scale.}
 
-\item{df}{--.}
+\item{df}{degrees of freedom.}
 }
 \description{
 Random generation of non-standardized t distributed numbers
-}
-\examples{
-\dontrun{
- # coming soon
-}
 }

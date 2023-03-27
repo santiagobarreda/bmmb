@@ -3,18 +3,15 @@
 \docType{data}
 \name{h95}
 \alias{h95}
-\title{H95}
+\title{The Hillenbrand et al. (1995) data}
 \format{
 An object of class \code{data.frame} with 1668 rows and 24 columns.
-}
-\source{
-\url{https://github.com/santiagobarreda/FastTrackR}
 }
 \usage{
 h95
 }
 \description{
-The Hillenbrand et al. (1995) data. The formant columns are so that column FXY represents the frequency for the Xth formant, for the Yth time slice.
+Data from: Hillenbrand, J., Getty, L. A., Clark, M. J., & Wheeler, K. (1995). Acoustic characteristics of American English vowels. The Journal of the Acoustical society of America, 97(5), 3099-3111.
 }
 \section{Columns}{
 

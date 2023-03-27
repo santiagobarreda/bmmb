@@ -1,8 +1,7 @@
 #' LKJ correlation prior density
 #'
-#' --
 #'
-#' @param eta --.
+#' @param eta distribution eta parameter.
 #' @export
 #' @examples
 #' \dontrun{

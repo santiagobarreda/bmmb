@@ -27,50 +27,53 @@ banovaplot(
 )
 }
 \arguments{
-\item{baov}{--.}
+\item{baov}{The dataframe representing a Bayesian Analysis of Variance.}
 
-\item{ylim}{--.}
+\item{ylim}{optionally override the plot y range.}
 
-\item{xlim}{--.}
+\item{xlim}{optionally override the plot x range.}
 
-\item{horizontal}{--.}
+\item{horizontal}{if TRUE, plot parameters across the x axis.}
 
-\item{cols}{--.}
+\item{cols}{A vector of colors used to plot the different clusters.}
 
-\item{labels}{--.}
+\item{labels}{a vector of labels. If "", labels are blank.}
 
-\item{xlab}{--.}
+\item{xlab}{optionally override the plot x axis range.}
 
-\item{ylab}{--.}
+\item{ylab}{optionally override the plot y axis range.}
 
-\item{pch}{--.}
+\item{pch}{points for parameter means.}
 
-\item{lwd}{--.}
+\item{lwd}{line widths for intervals.}
 
-\item{cex}{--.}
+\item{cex}{point size for parameter means.}
 
-\item{las}{--.}
+\item{las}{orientation of axis labels.}
 
-\item{cex.axis}{--.}
+\item{cex.axis}{expansion of axis tick numbers.}
 
-\item{grid}{--.}
+\item{grid}{If TRUE a grid is added to the plot.}
 
-\item{robust}{--.}
+\item{robust}{if TRUE, robust summaries of posterior distributions are used.}
 
-\item{yaxs}{--.}
+\item{yaxs}{y axis edge settings.}
 
-\item{xaxs}{--.}
+\item{xaxs}{x axis edge settings.}
 
-\item{line}{--.}
+\item{line}{if TRUE, add a line at x=0.}
 
-\item{...}{--.}
+\item{...}{additional parameters are passed to internal call of bmmb::brmplot().}
 }
 \description{
---
+A function to plot the output of the banova function included in this package.
 }
 \examples{
 \dontrun{
---
+model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+options (contrasts = c('contr.sum','contr.sum'))
+baov = bmmb::banova (model_height_vtl)
+bmmb::banovaplot (baov)
 }
 
 

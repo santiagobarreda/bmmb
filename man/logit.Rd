@@ -10,10 +10,10 @@ logit(p)
 ptoz(p)
 }
 \arguments{
-\item{p}{--.}
+\item{p}{a probability, or a vector of probabilities.}
 }
 \description{
---
+Convert probability to logit
 }
 \examples{
 \dontrun{

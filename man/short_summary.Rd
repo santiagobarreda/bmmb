@@ -7,19 +7,23 @@
 short_summary(model, omit_conv_stats = TRUE, omit_corrs = FALSE, digits = 2)
 }
 \arguments{
-\item{model}{--.}
+\item{model}{the brms model.}
 
-\item{omit_conv_stats}{--.}
+\item{omit_conv_stats}{if TRUE, parameter convergence statistics are omitted.}
 
-\item{omit_corrs}{--.}
+\item{omit_corrs}{if TRUE, random effects correlations are omitted.}
 
-\item{digits}{--.}
+\item{digits}{the number of digits to be presented.}
 }
 \description{
-Shorter brms model print statement.
+Presents a 'lite' version of the usual brms model print statement. This was needed to minimize redundant information in the book.
 }
 \examples{
 \dontrun{
- # coming soon
+model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+
+# compare reduced and usual print statements
+model_height_vtl
+bmmb::short_summary (model_height_vtl, omit_corrs = TRUE)
 }
 }

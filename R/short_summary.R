@@ -1,23 +1,27 @@
 
 #' Short summary printout
 #'
-#' Shorter brms model print statement.
+#' Presents a 'lite' version of the usual brms model print statement. This was needed to minimize redundant information in the book.
 #'
-#' @param model --.
-#' @param omit_conv_stats --.
-#' @param omit_corrs --.
-#' @param digits --.
+#' @param model the brms model.
+#' @param omit_conv_stats if TRUE, parameter convergence statistics are omitted.
+#' @param omit_corrs if TRUE, random effects correlations are omitted.
+#' @param digits the number of digits to be presented.
 #' @export
 #' @examples
 #' \dontrun{
-#'  # coming soon
+#' model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+#'
+#' # compare reduced and usual print statements
+#' model_height_vtl
+#' bmmb::short_summary (model_height_vtl, omit_corrs = TRUE)
 #' }
 
 short_summary = function (model, omit_conv_stats = TRUE, omit_corrs = FALSE, digits = 2){
 
-  if (class(model) == "brmsfit")
+  if (inherits(model, "brmsfit"))
     model = summary(model)
-  if (class(model) != "brmssummary")
+  if (inherits(model, "brmssummary"))
     stop("Wrong object type passed.")
 
   cat ("Formula: ", as.character(model$formula)[1])

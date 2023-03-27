@@ -2,28 +2,27 @@
 % Please edit documentation in R/get_priors.R
 \name{get_prior}
 \alias{get_prior}
-\title{Get priors in brms models
---}
+\title{Get priors in brms models}
 \usage{
-get_prior(formula, data, family = gaussian(), ...)
+get_prior(formula, data, family = "gaussian", ...)
 }
 \arguments{
-\item{formula}{--.'}
+\item{formula}{A description of the model to be fit.'}
 
-\item{data}{--.}
+\item{data}{The data to be used by the model.}
 
-\item{family}{--.}
+\item{family}{Information about the response distribution and/or link function.}
 
-\item{...}{--.}
+\item{...}{additional arguments are passed to brms::get_prior.}
 }
 \description{
-Get priors in brms models
---
+Information about priors which may be set for a brms model. This just calls brms::get_prior but changes the output of the formatting slightly to allow for columns to be imitted from the output. Please see the help file for brms::get_prior for more information.
 }
 \examples{
 \dontrun{
- # coming soon
+brms::get_prior (brms::bf(height ~ A*G + (A*G|L) + (1|S),
+                          sigma ~ A),
+                 data = exp_data, family="student")
 }
-
 
 }

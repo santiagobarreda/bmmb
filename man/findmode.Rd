@@ -2,20 +2,13 @@
 % Please edit documentation in R/findmode.R
 \name{findmode}
 \alias{findmode}
-\title{Find root mean square}
+\title{Find the modal value/category in a vector}
 \usage{
 findmode(x)
 }
 \arguments{
-\item{x}{--.}
+\item{x}{A vector of values.}
 }
 \description{
---
-}
-\examples{
-\dontrun{
---
-}
-
-
+Find the modal value/category in a vector
 }

@@ -1,13 +1,8 @@
 
-#' Find root mean square
+#' Find the modal value/category in a vector
 #'
-#' --
-#' @param x --.
+#' @param x A vector of values.
 #' @export
-#' @examples
-#' \dontrun{
-#' --
-#' }
 #'
 #'
 

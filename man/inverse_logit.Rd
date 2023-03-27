@@ -3,17 +3,17 @@
 \name{inverse_logit}
 \alias{inverse_logit}
 \alias{ztop}
-\title{Convert logit to probability}
+\title{Convert logits to probabilities}
 \usage{
 inverse_logit(z)
 
 ztop(z)
 }
 \arguments{
-\item{z}{--.}
+\item{z}{a scalar logit value, or a vector of scalars.}
 }
 \description{
---
+Convert logits to probabilities
 }
 \examples{
 \dontrun{

@@ -2,22 +2,15 @@
 % Please edit documentation in R/errors.R
 \name{mae}
 \alias{mae}
-\title{Find median absolute error}
+\title{Find the median/mean absolute error}
 \usage{
 mae(x, mean = FALSE)
 }
 \arguments{
-\item{x}{--.}
+\item{x}{a vector of numbers.}
 
-\item{mean}{--.}
+\item{mean}{if TRUE, the mean absolute deviation is returned.}
 }
 \description{
---
-}
-\examples{
-\dontrun{
---
-}
-
-
+The median absolute deviation is found by default.
 }

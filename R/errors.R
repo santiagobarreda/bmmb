@@ -1,16 +1,9 @@
 
-#' Find root mean square
+#' Find the root mean squared error
 #'
-#' --
-#' @param x --.
+#' @param x a vector of numbers.
 #' @export
-#' @examples
-#' \dontrun{
-#' --
-#' }
 #'
-#'
-
 
 rms = function (x){
   x = x[!is.na(x)]
@@ -18,16 +11,13 @@ rms = function (x){
 }
 
 
-#' Find median absolute error
+#' Find the median/mean absolute error
 #'
-#' --
-#' @param x --.
-#' @param mean --.
+#' The median absolute deviation is found by default.
+#'
+#' @param x a vector of numbers.
+#' @param mean if TRUE, the mean absolute deviation is returned.
 #' @export
-#' @examples
-#' \dontrun{
-#' --
-#' }
 #'
 #'
 
@@ -36,27 +26,3 @@ mae = function (x, mean = FALSE){
   if (!mean) return (stats::median (abs(x)))
   if (mean) return (mean (abs(x)))
 }
-
-
-#' Plot plotting colors
-#'
-#' --
-#' @param cols --.
-#' @export
-#' @examples
-#' \dontrun{
-#' --
-#' }
-#'
-#'
-
-
-plotcols = function(cols = NA){
-  if (is.na(cols[1])) plot (1:15,rep(1,15), col=bmmb::cols,pch=16,cex=9.5)
-  if (!is.na(cols[1])) plot (1:15,rep(1,15), col=cols,pch=16,cex=12.5)
-  text (1:15,rep(1,15), 1:15, cex=2)
-}
-
-
-
-

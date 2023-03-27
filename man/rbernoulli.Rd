@@ -7,15 +7,10 @@
 rbernoulli(n, p)
 }
 \arguments{
-\item{n}{--.}
+\item{n}{number of observations.}
 
-\item{p}{--.}
+\item{p}{probability of a success.}
 }
 \description{
 Random generation of Bernoulli variable
-}
-\examples{
-\dontrun{
- # coming soon
-}
 }

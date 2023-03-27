@@ -1,31 +1,34 @@
 
 #' Bayasian ANOVA plot
 #'
-#' --
+#' A function to plot the output of the banova function included in this package.
 #'
-#' @param baov --.
-#' @param ylim --.
-#' @param xlim --.
-#' @param horizontal --.
-#' @param cols --.
-#' @param labels --.
-#' @param xlab --.
-#' @param ylab --.
-#' @param pch --.
-#' @param lwd --.
-#' @param cex --.
-#' @param las --.
-#' @param cex.axis --.
-#' @param grid --.
-#' @param robust --.
-#' @param yaxs --.
-#' @param xaxs --.
-#' @param line --.
-#' @param ... --.
+#' @param baov The dataframe representing a Bayesian Analysis of Variance.
+#' @param ylim optionally override the plot y range.
+#' @param xlim optionally override the plot x range.
+#' @param horizontal if TRUE, plot parameters across the x axis.
+#' @param cols A vector of colors used to plot the different clusters.
+#' @param labels a vector of labels. If "", labels are blank.
+#' @param xlab optionally override the plot x axis range.
+#' @param ylab optionally override the plot y axis range.
+#' @param pch points for parameter means.
+#' @param lwd line widths for intervals.
+#' @param cex point size for parameter means.
+#' @param las orientation of axis labels.
+#' @param cex.axis expansion of axis tick numbers.
+#' @param grid If TRUE a grid is added to the plot.
+#' @param robust if TRUE, robust summaries of posterior distributions are used.
+#' @param yaxs y axis edge settings.
+#' @param xaxs x axis edge settings.
+#' @param line if TRUE, add a line at x=0.
+#' @param ... additional parameters are passed to internal call of bmmb::brmplot().
 #' @export
 #' @examples
 #' \dontrun{
-#' --
+#' model_height_vtl = bmmb::get_model("11_model_height_vtl_f0")
+#' options (contrasts = c('contr.sum','contr.sum'))
+#' baov = bmmb::banova (model_height_vtl)
+#' bmmb::banovaplot (baov)
 #' }
 #'
 #'

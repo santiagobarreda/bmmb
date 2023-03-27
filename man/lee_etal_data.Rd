@@ -7,32 +7,27 @@
 \format{
 An object of class \code{data.frame} with 300 rows and 11 columns.
 }
-\source{
-\url{https://github.com/santiagobarreda/FastTrackR}
-}
 \usage{
 lee_etal_data
 }
 \description{
-The Hillenbrand et al. (1995) data. The formant columns are so that column FXY represents the frequency for the Xth formant, for the Yth time slice.
+Data regarding the average acoustic characteristics of speech of children of different ages. From: Lee, S., Potamianos, A., & Narayanan, S. (1999). Acoustics of children’s speech: Developmental changes of temporal and spectral parameters. The Journal of the Acoustical Society of America, 105(3), 1455–1468.
 }
 \section{Columns}{
 
 \describe{
-\item{file}{the recording file name.}
-\item{f0}{average f0 in Hertz.}
-\item{duration}{vowel duration in milliseconds.}
-\item{label}{The label used for plotting the vowel.}
-\item{group}{A group number, used for plotting}
-\item{color}{The color Praat will use for plotting.}
-\item{number}{The file number.}
-\item{f11}{The average frequency for the first formant, for the first time slice.}
-\item{f21}{The average frequency for the second formant, for the first time slice.}
-\item{...}{And so on.}
+\item{vowel}{The vowel category}
+\item{f0}{Average f0 for that vowel, for that age and gender group.}
+\item{f0sd}{Standard deviation of f0 for that vowel, for that age and gender group.}
+\item{f1}{Average f1 for that vowel, for that age and gender group.}
+\item{f1sd}{Standard deviation of f1 for that vowel, for that age and gender group.}
+\item{f2}{Average f2 for that vowel, for that age and gender group.}
+\item{f2sd}{Standard deviation of f2 for that vowel, for that age and gender group.}
+\item{f3}{Average f3 for that vowel, for that age and gender group.}
+\item{f3sd}{Standard deviation of f3 for that vowel, for that age and gender group.}
+\item{age}{The age of the speaker group, in year.}
+\item{gender}{The gender of the speaker group, male or female}
 }
 }
 
-\references{
-Hillenbrand, J.M., Getty, L.A., Clark, M.J., and Wheeler, K. (1995). "Acoustic characteristics of American English vowels," Journal of the Acoustical Society of America, 97, 3099-3111.
-}
 \keyword{datasets}
