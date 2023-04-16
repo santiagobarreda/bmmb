@@ -16,6 +16,9 @@
 #'
 
 getsamples = function (model){
+  samples = attr (model, "samples")
+  if (!is.null(samples)) return (samples)
+
   output = data.frame (brms::as_draws_matrix(model))
   return (output)
 }
