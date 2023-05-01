@@ -16,7 +16,7 @@
 
 r2_bayes = function (model, re_formula = NULL, summary = TRUE){
 
-  if (inherits(model, "brmsfit")) stop ("Model must be fit with brms.")
+  if (!inherits(model, "brmsfit")) stop ("Model must be fit with brms.")
 
   if (model$family[1]!="student" & model$family[1]=="normal") stop ("Data type not supported for now.")
 
