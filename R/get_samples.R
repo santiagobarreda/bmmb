@@ -5,7 +5,7 @@
 #' Gets posterior samples from a brms model, returns these as a dataframe.
 #'
 #' @rdname getsamples
-#' @param model The brms model.
+#' @param model A brms model, or the output of the short_hypothesis function.
 #' @export
 #' @examples
 #' \dontrun{
