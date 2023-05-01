@@ -19,10 +19,10 @@
 
 short_summary = function (model, omit_conv_stats = TRUE, omit_corrs = FALSE, digits = 2){
 
-  if (inherits(model, "brmssummary"))
-    stop("Wrong object type passed.")
   if (inherits(model, "brmsfit"))
     model = summary(model)
+  if (!inherits(model, "brmssummary"))
+    stop("Wrong object type passed.")
   cat ("Formula: ", as.character(model$formula)[1])
   if (length(model$ngrps) > 0) {
     cat("\n\nGroup-Level Effects:")
