@@ -10,7 +10,7 @@ getsamples(model)
 get_samples(model)
 }
 \arguments{
-\item{model}{The brms model.}
+\item{model}{A brms model, or the output of the short_hypothesis function.}
 }
 \description{
 Gets posterior samples from a brms model, returns these as a dataframe.
